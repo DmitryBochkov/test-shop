@@ -19,10 +19,16 @@ const data = [
      price: 24
   },
   {
+     id: 3,
+     name: "шарик 1",
+     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png",
+     price: 30
+  },
+  {
      id: 4,
      name: "шарик 2",
      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png",
-     price: 30
+     price: 38
   }
 ]
 
@@ -30,7 +36,7 @@ const ProductList = () => {
   if (data.length) {
     return (
       data.map(product => {
-        return (<Col sm={12} lg={8}>
+        return (<Col sm={12} lg={8} key={product.id}>
           <ProductCard item={product} />
         </Col>)
       })
