@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { CartItem } from './Blocks/CartItem'
-import { Layout } from 'antd';
-
-const { Header, Footer, Sider, Content } = Layout;
-
+import Container from '@material-ui/core/Container';
 
 const data = [
   {
@@ -66,15 +63,8 @@ export const Cart = () => {
 
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Header>Header</Header>
-      <Layout>
-        <Sider>SideBar</Sider>
-        <Content>
-          <CartItems />
-        </Content>
-      </Layout>
-      <Footer>Footer</Footer>
-    </Layout>
+    <Container fixed>
+      <CartItems />
+    </Container>
   );
 }
