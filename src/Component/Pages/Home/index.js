@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
 import { ProductCard } from './Blocks/ProductCard';
-import { Sidebar } from '../../../UI/Sidebar';
+import { Sidebar } from 'UI/Sidebar';
 
 
 const data = [
