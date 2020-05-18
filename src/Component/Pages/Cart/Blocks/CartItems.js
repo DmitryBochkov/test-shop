@@ -4,11 +4,9 @@ import { CartItemsHeader } from './CartItemsHeader'
 
 export const CartItems = ({ products, removeItem }) => {
 
-  const CartRows = () => {
-    return (products.map((item) => {
-      return <CartItem item={item} key={item.id} removeItem={removeItem} />;
-    }))
-  }
+  const CartRows = () => products.map((item) => {
+    return <CartItem item={item} key={item.id} removeItem={removeItem} />;
+  });
   
   return (
     <div>
