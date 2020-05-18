@@ -1,3 +1,6 @@
+.cart-item--header {
+  font-weight: 500;
+}
 .cart-item {
   display: flex;
   align-items: center;

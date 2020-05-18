@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { CartItem } from './Blocks/CartItem'
+import { CartItems } from './Blocks/CartItems'
 import Container from '@material-ui/core/Container';
+
+import './cart.css'
 
 const data = [
   {
@@ -37,34 +39,15 @@ export const Cart = () => {
   const [products, sertProducts] = useState(data)
 
   const removeItem = (itemId) => {
-    let newData = products.filter(item => {
-      return item.id !== itemId
-    })
+    let newData = products.filter(item => item.id !== itemId)
+    
     sertProducts(newData)
-  }
-
-  const CartItems = () => {
-    return (
-      <div>
-        <div className="cart-item">
-          <div className="cart-item__image">Image</div>
-          <div>Name</div>
-          <div>Price</div>
-          <div>Quantity</div>
-          <div>Total</div>
-          <div> </div>
-        </div>
-        {products.map(item => {
-        return <CartItem item={item} key={item.id} removeItem={removeItem} />
-      })}
-      </div>
-    )
   }
 
 
   return (
     <Container fixed>
-      <CartItems />
+      <CartItems products={products} removeItem={removeItem} />
     </Container>
   );
 }

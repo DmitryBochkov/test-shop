@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import './styles.css'
 
 export const CartItem = ({ item, removeItem }) => {
   const [quantity, setQuantity ] = useState(item.quantity)

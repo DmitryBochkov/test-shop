@@ -4,12 +4,10 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Grid from '@material-ui/core/Grid';
 
 import {Home} from './Component/Pages/Home';
 import {Cart} from './Component/Pages/Cart';
 import {Header} from './UI/Header';
-import {Sidebar} from './UI/Sidebar';
 import {Footer} from './UI/Footer';
 
 import "./index.css";
