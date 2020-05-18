@@ -1,12 +1,37 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 import {Home} from './Component/Pages/Home';
+import {Cart} from './Component/Pages/Cart';
+import {Header} from './UI/Header';
+import {Footer} from './UI/Footer';
+
 import "./index.css";
-import "antd/dist/antd.css";
+
 const App = () => {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+
+        <div className="App-content">
+          <Switch>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,9 +1,10 @@
 import React from 'react';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
-import { Layout, Row, Col } from 'antd';
 import { ProductCard } from './Blocks/ProductCard';
+import { Sidebar } from 'UI/Sidebar';
 
-const { Header, Footer, Sider, Content } = Layout;
 
 const data = [
   {
@@ -36,29 +37,32 @@ const ProductList = () => {
   if (data.length) {
     return (
       data.map(product => {
-        return (<Col sm={12} lg={8} key={product.id}>
-          <ProductCard item={product} />
-        </Col>)
+        return (
+          <Grid item xs={12} sm={6} md={4} key={product.id} >
+            <ProductCard item={product} />
+          </Grid>
+        )
       })
     )
   } else {
-    return (<Col>No products found.</Col>)
+    return (<Grid item xs={12}>No products found.</Grid>)
   }
 }
 
 export const Home = () => {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Header>Header</Header>
-      <Layout>
-        <Sider>SidBar</Sider>
-        <Content>
-          <Row>
-            <ProductList/>
-          </Row>
-        </Content>
-      </Layout>
-      <Footer>Footer</Footer>
-    </Layout>
+    <Container fixed>
+      <Grid container spacing={4}>
+        <Grid item xs={12} sm={4} md={3}>
+          <Sidebar />
+        </Grid>
+
+        <Grid item xs={12} sm={8} md={9}>
+          <Grid container spacing={4}>
+            <ProductList />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

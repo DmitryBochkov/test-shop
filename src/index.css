@@ -15,3 +15,23 @@ code {
 img {
   max-width: 100%;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.App-content {
+  padding: 30px 0;
+}
+
+.main-header {
+  padding: 10px 0;
+  background-color: #ececec;
+}
+
+.main-footer {
+  margin-top: auto;
+  padding: 30px 0 20px;
+  background-color: #ececec;
+}
